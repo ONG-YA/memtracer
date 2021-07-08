@@ -14,11 +14,11 @@ import (
 var memcacheClient *memtracer.Client
 
 func doMemcache(w http.ResponseWriter, r *http.Request) {
-	item,err := memcacheClient.Get( r.Context(),"key")
+	item, err := memcacheClient.Get(r.Context(), "key")
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Printf("key:%s,value:%s", item.Key,string(item.Value))
+	fmt.Printf("key:%s,value:%s", item.Key, string(item.Value))
 }
 
 func main() {
